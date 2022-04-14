@@ -1,11 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
-class App extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
-      </React.Fragment>
-    );
+import React, { Component } from 'react'
+
+class App extends Component {
+  render() {
+    return(
+      <>
+        <h1>CASH N COMFORT</h1>
+      </>
+    )
   }
 }
 
