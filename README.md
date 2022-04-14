@@ -86,7 +86,7 @@
 
 ** Rails Routes/Landing page
 - In config/routes.rb, add this:
-```javascript
+```jsx
 get '*path', to: 'home#index', constraints: ->(request){ request.format.html? }
 root 'home#index'
 ```
@@ -95,7 +95,46 @@ root 'home#index'
 - Ensure server is running in terminal
 - Refresh browser to see any updates on the JSX in App.js
 
-* Database creation
+** React Routing
+- $ yarn add react-router-dom@5.3.0
+- In app/javascript/components/App.js add this:
+```jsx
+import {
+  BrowserRouter as  Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+```
+** Adding Reactstrap
+- $ bundle add bootstrap
+- $ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
+- $ yarn add reactstrap
+- In app/assets/stylesheets/application.scss, add this:
+`@import 'bootstrap';`
+- stop and restart server
+
+## Database creation
+** Apartment Resource
+- $ rails g resource Apartment street:string city:string state:string manager:string email:string price:string bedrooms:integer bathrooms:integer pets:string image:text user_id:integer
+- $ rails db:migrate
+
+** Rails Association
+- In app/models/apartment.rb, add this:
+```jsx
+class Apartment < ApplicationRecord
+  belongs_to :user
+end
+```
+- In app/models/user.rb, add this:
+```jsx
+class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  has_many :apartments
+end
+```
 
 * Database initialization
 
