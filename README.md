@@ -64,7 +64,36 @@
 - Seeing a blank page? Look for errors in the terminal or inspect your page.
 - Errors? Always look at the first error in the list.
 
-* Configuration
+** DS_Store
+- update gitignore to ensure no more issues with .DS_store 
+- If .DS_Store was never added to your git repository, simply add it to your .gitignore file.
+- If you don't have one, create a file called .gitignore in your the root directory of your app and add this:
+`**/.DS_Store`
+
+## Routes and Views
+** Rails Controller
+- $ rails generate controller Home
+
+** Rails View
+- In app/views/home/index.html.erb add this:
+`<%= react_component 'App' %>`
+
+** Webpacker compiling javascript
+- In app/views/layouts/application.html.erb, find this line:
+`<%= javascript_importmap_tags %>`
+- And replace it with this:
+`<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>`
+
+** Rails Routes/Landing page
+- In config/routes.rb, add this:
+```javascript
+get '*path', to: 'home#index', constraints: ->(request){ request.format.html? }
+root 'home#index'
+```
+
+** Check browser
+- Ensure server is running in terminal
+- Refresh browser to see any updates on the JSX in App.js
 
 * Database creation
 
