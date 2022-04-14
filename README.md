@@ -120,21 +120,9 @@ import {
 
 ** Rails Association
 - In app/models/apartment.rb, add this:
-```jsx
-class Apartment < ApplicationRecord
-  belongs_to :user
-end
-```
+`belongs_to :user`
 - In app/models/user.rb, add this:
-```jsx
-class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-  has_many :apartments
-end
-```
+`has_many :apartments`
 
 * Database initialization
 
