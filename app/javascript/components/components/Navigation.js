@@ -6,8 +6,7 @@ class Navigation extends Component {
   render() {
     return(
       <>
-      <h3>This is the Navigation Page</h3>
-        <Nav>
+        <Nav id="navlink">
           <NavItem>
             <NavLink to="/" className="nav-link">Home</NavLink>
           </NavItem>

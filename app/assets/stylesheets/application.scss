@@ -15,3 +15,19 @@
  */
 
  @import 'bootstrap';
+ @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Baloo+2:wght@400;500&family=Lemonada:wght@300;400;500&family=Updock&display=swap');
+
+
+body {
+   background-color: aquamarine;
+   text-align: center;
+ }
+
+#navlink {
+  text-align: center;
+  font-family: 'Updock', cursive;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+} 

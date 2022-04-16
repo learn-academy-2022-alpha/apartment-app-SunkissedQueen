@@ -25,11 +25,12 @@ class App extends Component {
     return(
       <Router>
       <Navigation/>
-      <h1>CASH N COMFORT</h1>
+      <h1 className='wrapper'>CASH N COMFORT</h1>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={AboutUs} />
       </Switch>
+      <Navigation/>
     </Router>
     )
   }
